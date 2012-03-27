@@ -1,0 +1,9 @@
+create table "LOGIN"
+(
+    "LOG_CODIGO"  INTEGER NOT NULL,
+    "LOG_NOME"      VARCHAR(10) NOT NULL,
+    "LOG_SENHA"     VARCHAR(10) NOT NULL,
+    "LOG_NIVEL"     INTEGER NOT null, 
+    CONSTRAINT "PK_LOGIN" PRIMARY key ("LOG_CODIGO")
+
+);
