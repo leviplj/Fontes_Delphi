@@ -77,4 +77,4 @@ Dá um upload das suas modificações
 git push [remoteName] [branchName]
 Cria um patch
 git format-patch master --stdout > nomeDoPatch.patch
-
+>> ..
