@@ -1,2 +1,80 @@
 Lista de comandos Git linux
 
+Mostra as configurações
+git config --list
+
+Mostra o valor do [atributo]
+git config [atributo]
+
+Adiciona o [arquivo] para ser enviado no próximo commit
+git add [arquivo]
+
+Mostra o status do commit atual
+git status
+
+Mostra as mudanças realizadas nos arquivos do commit atual
+git diff
+
+Realiza o commit
+git commit
+    -m "mensagem"    // coloca essa mensagem a respeito do commit
+    -v               // coloca a mensagem padrão do git mais o que foi mudado em cada arquivo
+
+Remove um arquivo
+git rm
+    --cache          // tira dos arquivos do próximo commit, o contrário de git add
+
+Mostra todos os commits
+git log
+   --all                   // mostra todos os commits
+   --pretty=oneline        // um em cada linha
+   --max-count=2           // mostra até dois commits
+   --since=5.minutes       // commits desde 5 minutos atrás
+   --until=5.minutes       // commits de até 5 minutos atrás
+   --author=[nome]         // commits apenas do autor [nome]
+   --graph                 // usa modo "gráfico"
+Assim como diz no tutorial, é legal utilizar esse comando
+
+git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+
+// então defina um atalho no teclado, com o comando
+
+git config --global alias.[atalho] 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+
+// agora ao digitar git [atalho] você terá o mesmo que se digitasse
+// git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+
+Volta a versão especificada pela hash
+git checkout [hash]
+
+Desfaz as mudanças feitas no [arquivo]
+git reset HEAD [arquivo]
+
+Volta para o estado desta hash
+git reset [hash]
+
+"Refaz" último commit
+git commit --amend
+
+Desfaz último commit
+git revert HEAD
+Dá uma tag para o hash atual
+git tag [nomeDaTag]
+    -d            // apaga um determinado tag
+Cria um novo branch
+git checkout -b [branchName]
+Combina o hash atual com o mencionado
+git merge [hash]
+Lista todos os branches
+git branch
+Dá um update no seu clone
+git fetch
+
+git pull    // git fetch + git merge origin/master
+Refaz um branch que existia na origem
+git branch --track [branchName] origin/[branchOriginName]
+Dá um upload das suas modificações
+git push [remoteName] [branchName]
+Cria um patch
+git format-patch master --stdout > nomeDoPatch.patch
+
