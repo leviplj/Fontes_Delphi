@@ -78,3 +78,4 @@ git push [remoteName] [branchName]
 Cria um patch
 git format-patch master --stdout > nomeDoPatch.patch
 
+Esta linha so aparece no outro branch...
