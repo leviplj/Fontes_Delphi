@@ -820,8 +820,7 @@ implementation
 
 uses DateUtils;
 
-//{$C+} Habilita os Assertions Erros
-//{$C-} Desabilita os Assertions Erros
+{$C+}
 {$R *.dfm}
 
 
