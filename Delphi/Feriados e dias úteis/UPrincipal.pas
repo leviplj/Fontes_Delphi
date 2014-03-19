@@ -12,8 +12,17 @@ type
     MaskEdit1: TMaskEdit;
     btnAssertDebug: TButton;
     edtAssertDebug: TEdit;
+    Button2: TButton;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Button3: TButton;
+    edtArray: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure btnAssertDebugClick(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -23,6 +32,8 @@ type
 
 var
   Form1: TForm1;
+  cont : Integer;
+  myArray : Array[0..20] of String;
 
 Const FERIADOS : array[0..791] Of String = (' 01/01/2013',
                                             ' 11/02/2013',
@@ -904,6 +915,37 @@ begin
    a := StrToInt(edtAssertDebug.Text);
    Assert(edtAssertDebug.Text = '', 'Vazio');
    Assert(a <> 0, 'afd');
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+   ShowMessage(IntToStr(Pos(Edit1.Text, Label1.Caption)));
+   if Pos(Edit1.Text, Label1.Caption) > 0 then
+      ShowMessage('Encontrou')
+   else
+      ShowMessage('Não Encontrou');
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var i       : Integer;
+    aux     : String;
+begin
+   myArray[cont+1] := edtArray.Text;
+   i := 0;
+   aux := '';
+   While i <= cont+1 do
+   begin
+      aux:= aux + myArray[i];
+      inc(i);
+   end;
+   ShowMessage(aux);
+   inc(cont);
+   edtArray.SetFocus;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+   cont := -1;
 end;
 
 end.
