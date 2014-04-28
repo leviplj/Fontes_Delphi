@@ -1,0 +1,3 @@
+WHERE
+    COALESCE(CLIENTE.ATIVO, 'N') = 'S'
+    Este comando visa substituir vazio por alguma coisa que é passada como parâmetro
